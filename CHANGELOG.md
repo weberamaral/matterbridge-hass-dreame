@@ -1,0 +1,168 @@
+# <img src="https://matterbridge.io/assets/matterbridge.svg" alt="Matterbridge Logo" width="64px" height="64px">&nbsp;&nbsp;&nbsp;Matterbridge plugin template changelog
+
+All notable changes to this project will be documented in this file.
+
+If you like this project and find it useful, please consider giving it a star on GitHub at https://github.com/Luligu/matterbridge-plugin-template and sponsoring it.
+
+<a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="120"></a>
+
+All notable changes to this project will be documented in this file.
+
+## [1.0.9] - 2026-02-17
+
+### Added
+
+- [select]: Add select sytem.
+- [schema]: Add schema.
+- [config]: Add defaut config.
+- [config]: Add new improved config style.
+
+### Changed
+
+- [package]: Bump `typescript-eslint` to v.8.56.0.
+- [eslint]: Use minimatch in ignores.
+
+<a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
+
+## [1.0.8] - 2026-02-16
+
+### Changed
+
+- [package]: Update dependencies.
+- [package]: Bump package to `automator` v.3.0.8.
+- [package]: Bump `node-ansi-logger` to v.3.2.0.
+- [package]: Bump `node-persist-manager` to v.2.0.1.
+- [package]: Bump `eslint` to v.10.0.0.
+
+<a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
+
+## [1.0.7] - 2026-02-07
+
+### Changed
+
+- [package]: Update dependencies.
+- [package]: Bump package to automator v.3.0.6.
+- [package]: Bump node-ansi-logger to v.3.2.0.
+- [vite]: Add cache under .cache/vite.
+- [workflow]: Migrate to trusted publishing / OIDC. Since you can authorize only one workflow with OIDC, publish.yml now does both the publishing with tag latest (on release) and with tag dev (on schedule or manual trigger).
+
+<a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
+
+## [1.0.6] - 2026-01-27
+
+### Changed
+
+- [package]: Update dependencies.
+- [package]: Bump package to automator v.3.0.2.
+
+<a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
+
+## [1.0.5] - 2026-01-14
+
+### Changed
+
+- [package]: Update dependencies.
+- [package]: Bump package to automator v.3.0.0.
+
+<a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
+
+## [1.0.4] - 2025-12-23
+
+### Added
+
+- [DevContainer]: Refactored Dev Container setup. The Matterbridge instance can now be paired on native Linux hosts or WSL 2 with Docker engine CLI integration. On Docker Desktop on Windows or macOS is not possible cause Docker Desktop runs inside a VM and not directly on the host so mDNS is not supported.
+- [DevContainer]: Since is now possible to pair from Dev Container, named volumes have been added to persist storage and plugins across rebuilds.
+
+### Changed
+
+- [package]: Update dependencies.
+- [package]: Update to the current Matterbridge signatures.
+- [package]: Require Matterbridge v.3.4.0.
+- [package]: Bump package to automator v.2.1.0.
+
+<a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
+
+## [1.0.3] - 2025-11-14
+
+### Changed
+
+- [package]: Update dependencies.
+- [package]: Bump package to automator v.2.0.12.
+- [jest]: Update jestHelpers to v.1.0.12.
+- [workflows]: Use shallow clones and --no-fund --no-audit for faster builds.
+- [package]: Update to the current Matterbridge signatures.
+
+<a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
+
+## [1.0.2] - 2025-10-25
+
+### Changed
+
+- [package]: Bump package to automator v. 2.0.9.
+- [jest]: Update jestHelpers to v. 1.0.9.
+
+<a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
+
+## [1.0.1] - 2025-10-17
+
+### Breaking Changes
+
+- [node]: Require node.js 20.x or 22.x or 24.x (LTS versions). Node.js 18.x is no longer supported.
+- [platform]: Require Matterbridge v.3.3.0.
+- [platform]: Upgrade to the new PlatformMatterbridge signature.
+
+### Changed
+
+- [package]: Bump package to automator version 2.0.8
+- [workflows]: Ignore any .md in build.yaml.
+- [workflows]: Ignore any .md in codeql.yaml.
+- [workflows]: Ignore any .md in codecov.yaml.
+- [template]: Update bug_report.md.
+- [jest]: Update jestHelpers to v. 1.0.8.
+- [workflows]: Improve speed on Node CI.
+- [devcontainer]: Add the plugin name to the container.
+- [devcontainer]: Improve performance of first build with shallow clone.
+
+<a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
+
+## [1.0.0] - 2025-06-15
+
+- First release of the Matterbridge plugin template
+
+<a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
+
+<!-- Commented out section
+## [1.0.0] - 2025-07-01
+
+### Added
+
+- [Feature 1]: Description of the feature.
+- [Feature 2]: Description of the feature.
+
+### Changed
+
+- [Feature 3]: Description of the change.
+- [Feature 4]: Description of the change.
+
+### Deprecated
+
+- [Feature 5]: Description of the deprecation.
+
+### Removed
+
+- [Feature 6]: Description of the removal.
+
+### Fixed
+
+- [Bug 1]: Description of the bug fix.
+- [Bug 2]: Description of the bug fix.
+
+### Security
+
+- [Security 1]: Description of the security improvement.
+
+<a href="https://www.buymeacoffee.com/luligugithub">
+  <img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80">
+</a>
+
+-->
