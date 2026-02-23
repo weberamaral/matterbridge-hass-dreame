@@ -1,0 +1,224 @@
+{
+  "type": "object",
+  "title": "MatterBridge Home Assistant Dreame",
+  "properties": {
+    "haUrl": {
+      "type": "string",
+      "title": "Home Assistant URL",
+      "description": "Home Assistant instance URL (http://192.168.1.100:8123)",
+      "default": "http://homeassistant.local:8123"
+    },
+    "haToken": {
+      "type": "string",
+      "title": "Home Assistant Token",
+      "description": "Home assistant token",
+      "format": "password"
+    },
+    "matterMode": {
+      "type": "string",
+      "title": "Matter Mode",
+      "description": "Matter mode",
+      "enum": ["bridge", "server"],
+      "default": "server"
+    },
+    "pollInterval": {
+      "type": "number",
+      "title": "poll interval",
+      "description": "poll interval (30s)",
+      "default": 30000,
+      "minimum": 5000,
+      "maximum": 300000
+    },
+    "debug": {
+      "type": "boolean",
+      "title": "debug",
+      "description": "debug mode (enable verbose logging)",
+      "default": false
+    },
+    "deviceWhitelist": {
+      "type": "array",
+      "title": "device whitelist",
+      "description": "device whitelist (entity_id)",
+      "items": {
+        "type": "string",
+        "pattern": "^vacuum\\..+"
+      },
+      "default": []
+    },
+    "batterySensorMap": {
+      "type": "object",
+      "title": "battery sensor mapping",
+      "description": "vacuum entity_id → battery sensor entity_id",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^sensor\\..+"
+      },
+      "default": {}
+    },
+    "chargingSensorMap": {
+      "type": "object",
+      "title": "charging status sensor mapping",
+      "description": "vacuum entity_id → charging status sensor entity_id",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^binary_sensor\\..+"
+      },
+      "default": {}
+    },
+    "cleaningModeEntityMap": {
+      "type": "object",
+      "title": "cleaning mode entity mapping",
+      "description": "vacuum entity_id → cleaning mode select entity_id",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^select\\..+"
+      },
+      "default": {}
+    },
+    "errorSensorMap": {
+      "type": "object",
+      "title": "error sensor mapping",
+      "description": "vacuum entity_id → error sensor entity_id",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^sensor\\..+"
+      },
+      "default": {}
+    },
+    "currentRoomSensorMap": {
+      "type": "object",
+      "title": "current room sensor mapping",
+      "description": "vacuum entity_id → current room sensor entity_id",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^sensor\\..+"
+      },
+      "default": {}
+    },
+    "stateSensorMap": {
+      "type": "object",
+      "title": "state sensor mapping",
+      "description": "vacuum entity_id → detailed state sensor entity_id",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^sensor\\..+"
+      },
+      "default": {}
+    },
+    "taskStatusSensorMap": {
+      "type": "object",
+      "title": "task status sensor mapping",
+      "description": "vacuum entity_id → task status sensor entity_id",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^sensor\\..+"
+      },
+      "default": {}
+    },
+    "cleanedAreaSensorMap": {
+      "type": "object",
+      "title": "cleaned area sensor mapping",
+      "description": "vacuum entity_id → cleaned area sensor entity_id (单位: m²)",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^sensor\\..+"
+      },
+      "default": {}
+    },
+    "cleaningTimeSensorMap": {
+      "type": "object",
+      "title": "cleaning time sensor mapping",
+      "description": "vacuum entity_id → cleaning time sensor entity_id (单位: 分钟)",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^sensor\\..+"
+      },
+      "default": {}
+    },
+    "roomAreaSizes": {
+      "type": "object",
+      "title": "room area sizes",
+      "description": "room name → area size in m²",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0.1,
+        "maximum": 1000
+      },
+      "default": {}
+    },
+    "phaseList": {
+      "type": "array",
+      "title": "phase list",
+      "description": "phase list for task status (e.g. cleaning phases)",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64
+      },
+      "default": ["Limpeza", "Retornando", "Esvaziando", "Concluído"],
+      "maxItems": 10
+    },
+    "selectedMapEntityMap": {
+      "type": "object",
+      "title": "selected map entity mapping",
+      "description": "vacuum entity_id → selected map select entity_id",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^select\\..+"
+      },
+      "default": {}
+    },
+    "fastMappingButtonMap": {
+      "type": "object",
+      "title": "Mapeamento rápido de botões",
+      "description": "vacuum entity_id → Mapeamento rápido de botão entity_id",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^button\\..+"
+      },
+      "default": {}
+    },
+    "mapIdMap": {
+      "type": "object",
+      "title": "Mapeamento de ID do mapa",
+      "description": "vacuum entity_id → { map_name → map_id }",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number",
+          "minimum": 1
+        }
+      },
+      "default": {}
+    },
+    "countdownTimeSeconds": {
+      "type": "number",
+      "title": "CountdownTime Valor fixo (segundos)",
+      "description": "Se configurado, o CountdownTime usará um número fixo de segundos (ignorando a estimativa automática).",
+      "minimum": 0,
+      "default": null
+    },
+    "progressEstimatedTimeCountdown": {
+      "type": "boolean",
+      "title": "Progress estimatedTime countdown",
+      "description": "Quando ativado, o estimatedTime fará a contagem regressiva a partir da duração configurada (usada para exibir o progresso do teste).",
+      "default": false
+    },
+    "hepaFilterSensorMap": {
+      "type": "object",
+      "title": "hepa filter sensor mapping",
+      "description": "vacuum entity_id → hepa filter sensor entity_id",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^sensor\\..+"
+      },
+      "default": {}
+    },
+    "unregisterOnShutdown": {
+      "type": "boolean",
+      "title": "Unregister on shutdown",
+      "description": "Unregister MatterBridge entities from Home Assistant when the plugin is disabled or MatterBridge is shut down (recommended to prevent stale entities)",
+      "default": false
+    }
+  }
+}

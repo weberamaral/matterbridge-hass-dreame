@@ -21,11 +21,11 @@ echo "Npm version: $(npm -v)"
 echo ""
 
 echo "1 - Installing updates and scripts..."
-npm install --global --no-fund --no-audit npm npm-check-updates shx cross-env 
+npm install --global --no-fund --no-audit npm npm-check-updates shx cross-env
 
 echo "2 - Building Matterbridge..."
 sudo chmod +x .devcontainer/install-matterbridge-*.sh
-# Use this for the main branch: 
+# Use this for the main branch:
 # .devcontainer/install-matterbridge-main.sh
 # Use this for the dev branch:
 .devcontainer/install-matterbridge-dev.sh
@@ -34,7 +34,7 @@ echo "3 - Creating directories..."
 sudo mkdir -p /home/node/Matterbridge /home/node/.matterbridge /home/node/.mattercert
 
 echo "4 - Setting permissions..."
-sudo chown -R node:node . /home/node/Matterbridge /home/node/.matterbridge /home/node/.mattercert
+sudo chown -R node:node  /home/node/Matterbridge /home/node/.matterbridge /home/node/.mattercert
 
 echo "5 - Building the package..."
 npm install --no-fund --no-audit
