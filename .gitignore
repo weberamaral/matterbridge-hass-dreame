@@ -1,6 +1,6 @@
 # .gitignore
 # This file specifies intentionally untracked directories and files that Git should ignore.
-
+.DS_Store
 # Specific directories that should be ignored
 .cache/
 .vscode/
